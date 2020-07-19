@@ -13,7 +13,7 @@ class AppointmentsController {
   async index(req, res){
     const { page } = req.query;
 
-    const appointments = await Appointments.findddAll({
+    const appointments = await Appointments.findAll({
       where: { user_id: req.userId, canceled_at: null },
       order: ['date'],
       attributes: ['id', 'date', 'past', 'cancelable'],
